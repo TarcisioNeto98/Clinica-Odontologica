@@ -12,15 +12,29 @@
         </header>
         <section class="conteiner">
             <div id="menu">
-                <nav>
-                    <ul>
+                <nav class="menu-principal">
+                    <ul class="lista">
                         <li><a>Inicio</a></li>
-                        <li><a>Cadastro</a></li>
+                        <li id="clicavel"><a>Cadastro</a></li>
+                        <nav id="nav1">
+                            <ul id="sub-menu" class="desaparecer">
+                                <li>Médico</li>
+                                <li>Paciente</li>
+                                <li>Estoque</li>
+                                <li>Especialidades</li>
+                                <li>Fornecedores</li>
+                            </ul>
+                        </nav>
                         <li><a>Atendimento</a></li>
+                        <nav></nav>
                         <li><a>Estoque</a></li>
+                        <nav></nav>
                         <li><a>Calendário</a></li>
+                        <nav></nav>
                         <li><a>Configurações</a></li>
+                        <nav></nav>
                         <li><a>Sair</a></li>
+                        <nav></nav>
                     </ul>
                 </nav>
             </div>
@@ -30,4 +44,5 @@
         </section>
         <footer></footer>
     </body>
+    <script src="js/index.js"></script>
 </html>
