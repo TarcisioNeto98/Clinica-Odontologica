@@ -5,19 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Dependente</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/popper.min.js"></script>
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </head>
 <body>
-    <div class="content">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #271c64;">
+        <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastro
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cadConsulta.html">Consulta</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadFuncionario.html">Funcionário</a>
+                <a class="dropdown-item" href="cadDependente.html">Dependende</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadPaciente.html">Paciente</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadProcedimento.html">Procedimento</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadUsuario.html">Usuário</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Atendimento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Estoque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calendário</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Configurações</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="content" id="generic">
         <h2>Cadastro de Dependente</h2>
-        <form>
-            <label for="idDependente">Nome do Dependente:</label>
-            <input type="text" name="nomeDependente" id="idDependente" placeholder="Nome do Dependente">
-            <br><br>
-            <label for="idCpfDependente">CPF:</label>
-            <input type="password" name="cpfDependente" id="idCpfDependente" placeholder="CPF do Dependente">
-            <br><br>
-            <input type="reset" value="Limpar">
-            <input type="submit" value="Cadastrar">
+        <form name="cadDependente">
+            <div class="form-group">
+                <label for="idDependente">Nome do Dependente:</label>
+                <input type="text" name="nomeDependente" id="idDependente" class="form-control" placeholder="Nome do Dependente">
+            </div>
+            <div class="form-group">
+                <label for="idCpfDependente">CPF:</label>
+                <input type="password" name="cpfDependente" id="idCpfDependente" class="form-control" placeholder="CPF do Dependente">
+            </div>
+            <div class="form-group">
+				<input type="reset" value="Limpar" class="btn btn-secondary">
+				<input type="submit" value="Cadastrar" class="btn btn-success">
+			</div>
+            
         </form>
     </div>
 </body>

@@ -1,7 +1,3 @@
-function isEmpty(str) {//Verifica se uma string é vazia!
-    return (0 === str.length);
-}
-
 var botaoSubmit = document.getElementById('submeter');
 var botaoReset = document.getElementById('limpar'), mensagem = document.getElementById('mensagem');
 var usuario = document.getElementById('idUsuario'), senha = document.getElementById('idSenha');

@@ -5,20 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Consulta</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/popper.min.js"></script>
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </head>
 <body>
-    <div class="content">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #271c64;">
+        <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastro
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cadConsulta.html">Consulta</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadFuncionario.html">Funcionário</a>
+                <a class="dropdown-item" href="cadDependente.html">Dependende</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadPaciente.html">Paciente</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadProcedimento.html">Procedimento</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadUsuario.html">Usuário</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Atendimento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Estoque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calendário</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Configurações</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container" id="generic">
         <h2>Cadastrar Consulta</h2>
-        <form>
-            <label for="idUsuario">Usuário:</label>
-            <input type="text" name="Usuario" id="idUsuario" placeholder="Informe o seu nome de usuário">
-            <br><br>
-            <label for="idSenha">Senha:</label>
-            <input type="password" name="Senha" id="idSenha" placeholder="Informe a senha do usuário">
-            <br><br>
-            <input type="reset" value="Limpar">
-            <input type="submit" value="Cadastrar" onClick="test()">
+        <form name=cadConsulta>
+            <div class="form-group">
+                <label for="idDataConsulta">Data:</label>
+                <input type="date" name="dataConsulta" id="idDataConsulta" class="form-control" placeholder="Informe a data da consulta">
+            </div>
+            <div class="form-group">
+                <label for="idValorConsulta">Valor:</label>
+                <input type="number" name="valorConsulta" id="idValorConsulta" class="form-control" placeholder="Informe o valor da consulta">
+            </div>
+            <div class="form-group">
+              <label for="idDentista">Dentista:</label>
+              <select id="idDentista" class="form-control">
+                <option>Selecione</option>
+                <option>Dentista 1</option>
+                <option>Dentista 2</option>
+              </select>
+            </div>
+            <div class="form-group" id="botoes">
+              <input id = "limpar" type="reset" value="Limpar" class="btn btn-secondary">
+              <input id = "submeter" type="submit" value="Cadastrar" class="btn btn-success">
+            </div>
         </form>
     </div>
 </body>
+<script src="js/validarConsulta.js"></script>
 </html>
