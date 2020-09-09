@@ -1,51 +1,64 @@
-<html !DOCTYPE html>
-    <head>
-        <title>Sistema de Clínica Odontológica</title>
-        <meta charset="utf-8"/>
-        <link href="css/index.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <p>Logo</p>
-            </div>
-        </header>
-        <section class="conteiner">
-            <div id="menu">
-                <div class="usuario">
-                    <p><br/>Usuário<br/>ADMINISTRADOR</p>
-                </div>
-                <nav class="menu-principal">
-                    <ul class="lista">
-                        <li><a>Inicio</a></li>
-                        <li id="clicavel"><a>Cadastro</a></li>
-                        <nav id="nav1">
-                            <ul id="sub-menu" class="desaparecer">
-                                <li>Médico</li>
-                                <li>Paciente</li>
-                                <li>Estoque</li>
-                                <li>Especialidades</li>
-                                <li>Fornecedores</li>
-                            </ul>
-                        </nav>
-                        <li><a>Atendimento</a></li>
-                        <nav></nav>
-                        <li><a>Estoque</a></li>
-                        <nav></nav>
-                        <li><a>Calendário</a></li>
-                        <nav></nav>
-                        <li><a>Configurações</a></li>
-                        <nav></nav>
-                        <li><a>Sair</a></li>
-                        <nav></nav>
-                    </ul>
-                </nav>
-            </div>
-            <div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando Bootstrap</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+	
+	<script src="js/popper.min.js"></script>
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	
+	
+</head>
+<body>
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #271c64;">
+  <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            </div>
-        </section>
-        <footer></footer>
-    </body>
-    <script src="js/index.js"></script>
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Início</a>
+      </li>
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cadConsulta.html">Consulta</a>
+          <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="cadFuncionario.html">Funcionário</a>
+          <a class="dropdown-item" href="cadDependente.html">Dependende</a>
+		  <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="cadPaciente.html">Paciente</a>
+		  <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="cadProcedimento.html">Procedimento</a>
+		  <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="cadUsuario.html">Usuário</a>
+        </div>
+	  </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Atendimento</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Estoque</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Calendário</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Configurações</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</body>
 </html>

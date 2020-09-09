@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(236, 234, 234);
+}
+
+form{
+    background-color: white;
+    width: 40%;
+    height: 60%;
+    position: relative;
+    bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input:not(#botao){
+    margin-top: 8%;
+    width: 90%;
+    padding: 2%;
+    margin-left: 5%;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(218, 214, 214);
+}
+
+input[type="button"]{
+    margin-top: 0;
+    border:none;
+    padding: 4%;
+    width: 30%;
+    color: white;
+    background-color: rgb(39, 28, 100);
+    text-transform: uppercase;
+}
+
+form p{
+    margin-top: 3%;
+    margin-left: 72%;
+    margin-bottom: 3%;
+    color: rgb(107, 106, 106);
+    width: 40%;
+}
+
+input[type="button"], form{
+    border-radius: 5%;
+}

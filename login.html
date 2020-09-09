@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="content">
+        <h2>Login</h2>
+        <form>
+            <label for="idUsuario">Usuário:</label>
+            <input type="text" name="Usuario" id="idUsuario" placeholder="Informe o seu nome de usuário">
+            <br><br>
+            <label for="idSenha">Senha:</label>
+            <input type="password" name="Senha" id="idSenha" placeholder="Informe a senha do usuário">
+            <br><br>
+            <input type="reset" id ="limpar" value="Limpar">
+            <input type="button" id = "submeter" value="Entrar">
+        </form>
+        <p id = "mensagem"></p>
+    </div>
+</body>
+<script src="js/validarUsuario.js"></script>
+</html>

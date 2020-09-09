@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticação</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+	
+	<script src="js/popper.min.js"></script>
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	
+</head>
+<body>
+	<div class="container" style="margin-top: 100px">
+        <div class="form-group">
+			<img src="img/logo.png">
+		</div>
+		<form action="index.html">
+            <div class="form-group">
+				<div class="col-md-8 offset-md-4">
+					<label for="idUsuario">Usuário:</label>
+					<input type="text" name="Usuario" class="form-control col-4 align-items-center" id="idUsuario" placeholder="Informe o seu usuário">
+				</div>
+			</div>
+            <div class="form-group">
+				<div class="col-md-8 offset-md-4">
+					<label for="idSenha">Senha:</label>
+					<input type="password" name="Senha" class="form-control col-4" id="idSenha" placeholder="Informe a sua senha">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-8 offset-md-4">
+					<input type="reset" value="Limpar" class="btn btn-secondary">
+					<input type="submit" value="Acessar" class="btn btn-primary" onClick="test()">
+				</div>
+			</div>
+		</form>
+    </div>
+    <script>
+        function test(){
+            alert('Ainda existem pendências');
+        }
+    </script>
+
+</body>
+</html>

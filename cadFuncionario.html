@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionário</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #271c64;">
+        <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastro
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cadConsulta.html">Consulta</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadFuncionario.html">Funcionário</a>
+                <a class="dropdown-item" href="cadDependente.html">Dependende</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadPaciente.html">Paciente</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadProcedimento.html">Procedimento</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="cadUsuario.html">Usuário</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Atendimento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Estoque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calendário</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Configurações</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container" id="generic">
+        <h2>Cadastro Funcionário</h2>
+        <form name="cadFunc">
+            <div class="form-group">
+                <label for="idFuncionario">Nome:</label>
+                <input type="text" name="nomeFuncionario" id="idFuncionario" class="form-control" placeholder="Informe o seu nome do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="idCpf">CPF:</label>
+                <input type="text" name="cpfFuncionario" id="idCpf" class="form-control" placeholder="Informe o CPF do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="idEmail">E-mail:</label>
+                <input type="email" name="emailFuncionario" id="idEmail" class="form-control" placeholder="Informe o e-mail do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="idSalario">Salário:</label>
+                <input type="text" name="salarioFuncionario" id="idSalario" class="form-control" placeholder="Informe o salário do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="idCargo">Cargo:</label>
+                <input type="text" name="cargoFuncionario" id="idCargo" class="form-control" placeholder="Informe o cargo do funcionário">
+            </div>
+            <div class="form-group">
+				<input type="reset" value="Limpar" class="btn btn-secondary">
+				<input type="submit" value="Cadastrar" class="btn btn-success">
+			</div>
+        </form>
+    </div>
+</body>
+</html>
