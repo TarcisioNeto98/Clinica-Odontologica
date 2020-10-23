@@ -7,6 +7,7 @@ import CadPaciente from '../views/CadPaciente.vue';
 import CadConsulta from '../views/CadConsulta.vue';
 import CadDependente from '../views/CadDependente.vue';
 import CadProcedimento from '../views/CadProcedimento.vue';
+import CadDentista from '../views/CadDentista.vue';
 import BuscarUsuario from '../views/paginas_busca/BuscarUsuario.vue';
 import BuscarDependente from '../views/paginas_busca/BuscarDependente.vue';
 import AlterarUsuario from '../views/paginas_alteracao/AlterarUsuario.vue';
@@ -32,6 +33,11 @@ const routes = [
     path: '/cadastro/usuario',
     name: 'CadUsuario',
     component: CadUsuario
+  },
+  {
+    path: '/cadastro/dentista',
+    name: 'CadDentista',
+    component: CadDentista
   },
   {
     path: '/cadastro/funcionario',

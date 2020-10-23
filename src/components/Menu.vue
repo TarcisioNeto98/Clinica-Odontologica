@@ -42,6 +42,11 @@
                     Cadastro de Procedimento
                   </router-link>
                 </b-dropdown-item>
+                <b-dropdown-item>
+                  <router-link to="/cadastro/dentista" class="dropdown-item">
+                    Cadastro de Dentista
+                  </router-link>
+                </b-dropdown-item>
               </b-nav-item-dropdown>
               <b-nav-item-dropdown
                 id="dropdown_busca"

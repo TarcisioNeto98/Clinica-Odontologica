@@ -1,15 +1,9 @@
 <template>
     <form class="container">
-        <h3 style="text-align: center;" class="mb-3 mt-3">Cadastro de Usuário</h3>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input v-model="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputNome">Nome</label>
-                <input type="text" v-model="nome" class="form-control" id="inputNome" placeholder="Nome">
-            </div>
+        <h3 style="text-align: center;" class="mb-3 mt-3">Cadastro de Funcionário</h3>
+        <div class="form-group">
+            <label for="inputNome">Nome</label>
+            <input type="text" v-model="nome" class="form-control" id="inputNome" placeholder="Nome">
         </div>
         <div class="form-group">
             <label for="inputAddress">Endereço</label>
@@ -45,11 +39,11 @@ export default {
     data: function(){
         return {
             nome: '',
-            email: '',
             cidade: '',
             salario: '',
             cep: '',
-            estado: 'CE'
+            estado: 'CE',
+            endereco: ''
         }
     },
     name: 'CadFuncionario',
@@ -58,8 +52,8 @@ export default {
         alert(JSON.stringify(data));
       },
       clique: function(){
-        this.$http.post('http://localhost:8081/quatum/api/funcionarios/',
-          {nome: this.nome, cidade: this.cidade, cep: this.cep, estado: this.estado}
+        this.$http.post('http://localhost:8090/quatum/api/funcionarios/',
+          {nome: this.nome, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
         ).then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));
       }
