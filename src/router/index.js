@@ -8,6 +8,7 @@ import CadConsulta from '../views/CadConsulta.vue';
 import CadDependente from '../views/CadDependente.vue';
 import CadProcedimento from '../views/CadProcedimento.vue';
 import BuscarUsuario from '../views/paginas_busca/BuscarUsuario.vue';
+import BuscarDependente from '../views/paginas_busca/BuscarDependente.vue';
 import AlterarUsuario from '../views/paginas_alteracao/AlterarUsuario.vue';
 import HomeLogado from '../views/HomeLogado.vue';
 
@@ -76,6 +77,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: HomeLogado
+  },
+  {
+    path: '/buscar/dependente',
+    name: 'BuscarDependente',
+    component: BuscarDependente
   }
 ]
 

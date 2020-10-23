@@ -51,7 +51,12 @@
               >
                 <b-dropdown-item>
                   <router-link to="/buscar/usuario" class="dropdown-item">
-                    Buscar Usuário
+                    Buscar Funcionário
+                  </router-link>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <router-link to="/buscar/dependente" class="dropdown-item">
+                    Buscar Dependente
                   </router-link>
                 </b-dropdown-item>
               </b-nav-item-dropdown>
