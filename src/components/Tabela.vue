@@ -12,8 +12,8 @@
     <tr v-for="obj in array" v-bind:key="obj.id">
       <th scope="row">{{obj.id}}</th>
       <td>{{obj.nome}}</td>
-      <td>Remover</td>
-      <td><BotaoCadastrar v-bind:id="obj.id" v-bind:cadastrar="titulo"/></td>
+      <td><BotaoRemover v-bind:remover="remover" v-bind:id="obj.id"/></td>
+      <td><BotaoCadastrar v-bind:cadastrarItem="cadastrar" v-bind:id="obj.id" v-bind:cadastrar="titulo"/></td>
     </tr>
   </tbody>
 </table>
@@ -21,13 +21,15 @@
 
 <script>
 import BotaoCadastrar from '../components/BotaoCadastrar.vue';
+import BotaoRemover from '../components/BotaoRemover.vue';
 
 export default{
     name: 'Tabela',
     components: {
-        BotaoCadastrar
+        BotaoCadastrar,
+        BotaoRemover
     },
-    props:['titulo', 'array'],
+    props:['titulo', 'array', 'remover', 'cadastrar'],
     data: function(){
         return {
             id: '2'

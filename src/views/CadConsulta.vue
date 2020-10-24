@@ -34,7 +34,6 @@ export default {
         dentistas: null
       }
     },
-    props: ['id'],
     created: function(){
       this.$http.get("http://localhost:8090/quatum/api/dentistas/").then((res) => {this.dentistas = res.data});
     },

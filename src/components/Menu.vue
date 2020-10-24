@@ -25,13 +25,6 @@
                   </router-link>
                 </b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
-                <b-dropdown-divider></b-dropdown-divider>
-                <b-dropdown-item>
-                  <router-link to="/cadastro/dependente" class="dropdown-item">
-                    Cadastro de Dependente
-                  </router-link>
-                </b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
                 <b-dropdown-item>
                   <router-link to="/cadastro/procedimento" class="dropdown-item">
                     Cadastro de Procedimento

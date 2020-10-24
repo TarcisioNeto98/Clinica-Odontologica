@@ -14,6 +14,7 @@ import BuscarPaciente from '../views/paginas_busca/BuscarPaciente.vue';
 import AlterarUsuario from '../views/paginas_alteracao/AlterarUsuario.vue';
 import HomeLogado from '../views/HomeLogado.vue';
 import ResultadoPaciente from '../views/paginas_busca/ResultadoPaciente.vue';
+import ResultadoFuncionario from '../views/paginas_busca/ResultadoFuncionario.vue';
 
 Vue.use(VueRouter)
 
@@ -57,7 +58,7 @@ const routes = [
     component: CadConsulta
   },
   {
-    path: '/cadastro/dependente',
+    path: '/cadastro/dependente:id',
     name: 'CadDependente',
     component: CadDependente
   },
@@ -75,6 +76,11 @@ const routes = [
     path: '/resultado/paciente:array',
     name: 'ResultadoPaciente',
     component: ResultadoPaciente
+  },
+  {
+    path: '/resultado/funcionario:array',
+    name: 'ResultadoFuncionario',
+    component: ResultadoFuncionario
   },
   {
     path: '/buscar/paciente',

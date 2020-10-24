@@ -1,5 +1,5 @@
 <template>
-<Busca titulo="Busca de Paciente"/>
+<Busca titulo="Busca de Paciente" v-bind:tipoUrl="true"/>
 </template>
 
 <script>

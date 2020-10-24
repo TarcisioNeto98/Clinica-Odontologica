@@ -1,5 +1,5 @@
 <template>
-    <Tabela v-bind:array="$route.params.array" titulo="Consulta"/>
+    <Tabela v-bind:remover="true" v-bind:cadastrar="true" v-bind:array="$route.params.array" titulo="Consulta"/>
 </template>
 
 <script>

@@ -6,8 +6,12 @@
             <input type="text" v-model="nome" class="form-control" id="inputNome" placeholder="Nome">
         </div>
         <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input v-model="email" type="text" class="form-control" id="inputEmail" placeholder="Digite seu email">
+        </div>
+        <div class="form-group">
             <label for="inputAddress">Endereço</label>
-            <input v-model="endereco" type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
+            <input v-model="endereco" type="text" class="form-control" id="inputAddress" placeholder="Digite seu endereco">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -43,7 +47,8 @@ export default {
             salario: '',
             cep: '',
             estado: 'CE',
-            endereco: ''
+            endereco: '',
+            email: ''
         }
     },
     name: 'CadFuncionario',
@@ -53,7 +58,7 @@ export default {
       },
       clique: function(){
         this.$http.post('http://localhost:8090/quatum/api/funcionarios/',
-          {nome: this.nome, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
+          {nome: this.nome, email: this.email, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
         ).then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));
       }
