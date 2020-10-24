@@ -69,24 +69,21 @@ export default {
     },
     methods:{
         mostrar: function(data){
-            var i = 0;
-            for(i = 0; i < data.length; i++) this.numConsulta++;
+            this.numConsulta = data.quantidade;
         },
         mostrarFun: function(data){
-            var i = 0;
-            for(i = 0; i < data.length; i++) this.numFuncionario++;
+            this.numFuncionario = data.quantidade;
         },
         mostrarPac: function(data){
-            var i = 0;
-            for(i = 0; i < data.length; i++) this.numPaciente++;
+            this.numPaciente = data.quantidade;
         }
     },
     mounted(){
-        this.$http.get('http://localhost:8081/quatum/api/consultas/')
+        this.$http.get('http://localhost:8090/quatum/api/consultas/quantidade')
         .then((res) => {this.mostrar(res.data)});
-        this.$http.get('http://localhost:8081/quatum/api/funcionarios/')
+        this.$http.get('http://localhost:8090/quatum/api/funcionarios/quantidade')
         .then((res) => {this.mostrarFun(res.data)});
-        this.$http.get('http://localhost:8081/quatum/api/pacientes/')
+        this.$http.get('http://localhost:8090/quatum/api/pacientes/quantidade')
         .then((res) => {this.mostrarPac(res.data)});
     }
 }
