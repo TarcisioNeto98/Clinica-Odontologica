@@ -4,26 +4,22 @@
           <h2>Cadastrar Consulta</h2>
           <div class="row">
             <div class="form-group col-md-6">
-                <label for="idDataConsulta">Data:</label>
-                <input v-model="data" type="date" name="dataConsulta" id="idDataConsulta" class="form-control" placeholder="Informe a data da consulta">
+                <label for="idValorConsulta">Valor:</label>
+                <input type="number" name="valorConsulta" id="idValorConsulta" 
+                class="form-control" placeholder="Informe o valor da consulta" v-model="valor">
             </div>
             <div class="form-group col-md-6">
-                <label for="idValorConsulta">Valor:</label>
-                <input type="number" name="valorConsulta" id="idValorConsulta" class="form-control" placeholder="Informe o valor da consulta">
-            </div>
-          </div>
-            <div class="form-group">
               <label for="idDentista">Dentista:</label>
-              <select id="idDentista" class="form-control">
-                <option>Selecione</option>
-                <option>Dentista 1</option>
-                <option>Dentista 2</option>
+              <select id="idDentista" v-model="selecionado" class="form-control">
+                <option disabled value="">Escolha um item</option>
+                <option v-for="dentista in dentistas" v-bind:key="dentista.id">{{dentista.id}} {{dentista.nome}}</option>
               </select>
             </div>
+          </div>
             <div id="botoes">
               <input id = "limpar" type="reset" value="Limpar" class="btn btn-secondary" style="margin-right:2%;">
               <input id = "submeter" type="button" v-on:click="clique()" value="Cadastrar" class="btn btn-success">
-            </div>
+          </div>
         </form>
     </div>
 </template>
@@ -33,18 +29,24 @@ export default {
     name: 'CadConsulta',
     data: function(){
       return {
-        data: '',
-        user: null
+        valor: '',
+        selecionado: '',
+        dentistas: null
       }
+    },
+    props: ['id'],
+    created: function(){
+      this.$http.get("http://localhost:8090/quatum/api/dentistas/").then((res) => {this.dentistas = res.data});
     },
     methods:{
       mostrar:function(data){
         alert(JSON.stringify(data));
       },
       clique: function(){
-        this.$http.post('http://localhost:8081/quatum/api/consultas/',
-          {data: this.data}
-        ).then((res) => {this.mostrar(res.data)}).
+        this.selecionado = this.selecionado.replace(/\D/gim, '');
+        this.$http.post('http://localhost:8090/quatum/api/consultas/', 
+        {valor: this.valor, idPaciente: this.$route.params.id, idDentista: this.selecionado})
+        .then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));
       }
     }

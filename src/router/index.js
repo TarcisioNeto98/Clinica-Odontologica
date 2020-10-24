@@ -10,8 +10,10 @@ import CadProcedimento from '../views/CadProcedimento.vue';
 import CadDentista from '../views/CadDentista.vue';
 import BuscarUsuario from '../views/paginas_busca/BuscarUsuario.vue';
 import BuscarDependente from '../views/paginas_busca/BuscarDependente.vue';
+import BuscarPaciente from '../views/paginas_busca/BuscarPaciente.vue';
 import AlterarUsuario from '../views/paginas_alteracao/AlterarUsuario.vue';
 import HomeLogado from '../views/HomeLogado.vue';
+import ResultadoPaciente from '../views/paginas_busca/ResultadoPaciente.vue';
 
 Vue.use(VueRouter)
 
@@ -50,7 +52,7 @@ const routes = [
     component: CadPaciente
   },
   {
-    path: '/cadastro/consulta',
+    path: '/cadastro/consulta:id',
     name: 'CadConsulta',
     component: CadConsulta
   },
@@ -68,6 +70,16 @@ const routes = [
     path: '/buscar/usuario',
     name: 'BuscarUsuario',
     component: BuscarUsuario
+  },
+  {
+    path: '/resultado/paciente:array',
+    name: 'ResultadoPaciente',
+    component: ResultadoPaciente
+  },
+  {
+    path: '/buscar/paciente',
+    name: 'BuscarPaciente',
+    component: BuscarPaciente
   },
   {
     path: '/alterar/usuario',

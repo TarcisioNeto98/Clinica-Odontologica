@@ -25,11 +25,6 @@
                   </router-link>
                 </b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
-                <b-dropdown-item>
-                  <router-link to="/cadastro/consulta" class="dropdown-item">
-                    Cadastro de Consulta
-                  </router-link>
-                </b-dropdown-item>
                 <b-dropdown-divider></b-dropdown-divider>
                 <b-dropdown-item>
                   <router-link to="/cadastro/dependente" class="dropdown-item">
@@ -42,6 +37,7 @@
                     Cadastro de Procedimento
                   </router-link>
                 </b-dropdown-item>
+                <b-dropdown-divider></b-dropdown-divider>
                 <b-dropdown-item>
                   <router-link to="/cadastro/dentista" class="dropdown-item">
                     Cadastro de Dentista
@@ -62,6 +58,11 @@
                 <b-dropdown-item>
                   <router-link to="/buscar/dependente" class="dropdown-item">
                     Buscar Dependente
+                  </router-link>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <router-link to="/buscar/paciente" class="dropdown-item">
+                    Buscar Paciente
                   </router-link>
                 </b-dropdown-item>
               </b-nav-item-dropdown>
