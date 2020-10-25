@@ -50,6 +50,7 @@ export default{
     },
     mostrar: function(data){
       if(this.isEmpty(data)){
+        alert(JSON.stringify(data));
         alert("Usuario não encontrado!");
       }
       else{
@@ -60,7 +61,7 @@ export default{
     },
     login: function(){
       if(this.validarEmail() && this.validarSenha()){
-        this.$http.get("http://localhost:8081/quatum/api/users/?email="+this.email+'&password='+this.senha).
+        this.$http.get("http://localhost:8090/quatum/api/users/?email="+this.email+'&password='+this.senha).
         then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));
       }

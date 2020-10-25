@@ -71,6 +71,10 @@ export default {
     methods:{
       mostrar: function(data){
         this.users = data;
+        if(data.id === -1){
+          alert("Senha já existe!");
+          return;
+        }
         this.$emit('aparecer');
         this.$router.push({name: 'Home', params: {id: this.users.id, email: this.users.email}});
       },
