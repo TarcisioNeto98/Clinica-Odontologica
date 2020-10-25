@@ -6,6 +6,7 @@
       <th scope="col">Nome</th>
       <th scope="col">Remover</th>
       <th scope="col">Cadastrar</th>
+      <th scope="col">Alterar</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
       <td>{{obj.nome}}</td>
       <td><BotaoRemover v-bind:remover="remover" v-bind:id="obj.id"/></td>
       <td><BotaoCadastrar v-bind:cadastrarItem="cadastrar" v-bind:id="obj.id" v-bind:cadastrar="titulo"/></td>
+      <td><BotaoAlterar v-bind:alterar="alterar" v-bind:valor="valor" v-bind:id="obj.id"/></td>
     </tr>
   </tbody>
 </table>
@@ -22,14 +24,16 @@
 <script>
 import BotaoCadastrar from '../components/BotaoCadastrar.vue';
 import BotaoRemover from '../components/BotaoRemover.vue';
+import BotaoAlterar from '../components/BotaoAlterar.vue';
 
 export default{
     name: 'Tabela',
     components: {
         BotaoCadastrar,
-        BotaoRemover
+        BotaoRemover,
+        BotaoAlterar
     },
-    props:['titulo', 'array', 'remover', 'cadastrar'],
+    props:['titulo', 'array', 'remover', 'cadastrar', 'alterar', 'valor'],
     data: function(){
         return {
             id: '2'

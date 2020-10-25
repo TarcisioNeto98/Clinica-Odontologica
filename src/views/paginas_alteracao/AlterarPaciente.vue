@@ -1,6 +1,6 @@
 <template>
 <form class="container">
-  <h3 style="text-align: center;" class="mb-3 mt-3">Cadastro de Paciente</h3>
+  <h3 style="text-align: center;" class="mb-3 mt-3">Alterar Paciente {{this.id}}</h3>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
@@ -11,10 +11,6 @@
         <input type="text" v-model="nome" name="nomePaciente" id="idNome" class="form-control" placeholder="Informe o nome do paciente">
     </div>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Endereço</label>
-    <input type="text" v-model="endereco" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-  </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Cidade</label>
@@ -22,8 +18,8 @@
     </div>
     <div class="form-group col-md-4">
       <label for="inputEstado">Estado</label>
-      <select id="inputEstado" class="form-control">
-        <option selected>Escolher...</option>
+      <select id="inputEstado" class="form-control" v-model="estado">
+        <option selected>{{this.estado}}</option>
         <option>...</option>
       </select>
     </div>
@@ -32,12 +28,42 @@
       <input type="text" v-model="cep" v-on:click="clique()" class="form-control" id="inputCEP">
     </div>
   </div>
-  <button type="button" v-on:click="clique()" class="btn btn-primary btn-lg">Atualizar</button>
+  <button type="button" v-on:click="atualizar()" class="btn btn-primary btn-lg">Atualizar</button>
 </form>
 </template>
 
 <script>
 export default {
-    name: 'AlterarPaciente'
+    name: 'AlterarPaciente',
+    mounted: function(){
+      this.$http.get("http://localhost:8090/quatum/api/pacientes/id/"+this.$route.params.id).then(res => res.data).
+      then(data => this.mostrar(data));
+    },
+    data: function(){
+        return {
+          id: 0,
+          email: '',
+          nome: '',
+          cep: '',
+          estado: 'ce',
+          endereco: '',
+          cidade: ''
+        }
+    },
+    methods: {
+      mostrar(data){
+        this.id = data.id;
+        this.email = data.email;
+        this.nome = data.nome;
+        this.cep = data.cep;
+        this.estado = data.estado;
+        this.cidade = data.cidade;
+      },
+      atualizar(){
+        this.$http.put('http://localhost:8090/quatum/api/pacientes/', 
+        {id: this.id, email: this.email, nome: this.nome, cep: this.cep,
+        estado: this.estado, cidade: this.cidade}).then(res => alert(JSON.stringify(res.data)));
+      }
+    }
 }
 </script>

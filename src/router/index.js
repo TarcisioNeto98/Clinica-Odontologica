@@ -12,6 +12,7 @@ import BuscarUsuario from '../views/paginas_busca/BuscarUsuario.vue';
 import BuscarDependente from '../views/paginas_busca/BuscarDependente.vue';
 import BuscarPaciente from '../views/paginas_busca/BuscarPaciente.vue';
 import AlterarUsuario from '../views/paginas_alteracao/AlterarUsuario.vue';
+import AlterarPaciente from '../views/paginas_alteracao/AlterarPaciente.vue';
 import HomeLogado from '../views/HomeLogado.vue';
 import ResultadoPaciente from '../views/paginas_busca/ResultadoPaciente.vue';
 import ResultadoFuncionario from '../views/paginas_busca/ResultadoFuncionario.vue';
@@ -88,9 +89,14 @@ const routes = [
     component: BuscarPaciente
   },
   {
-    path: '/alterar/usuario',
+    path: '/alterar/usuario:id',
     name: 'AlterarUsuario',
     component: AlterarUsuario
+  },
+  {
+    path: '/alterar/paciente:id',
+    name: 'AlterarPaciente',
+    component: AlterarPaciente
   },
   {
     path: '/home:id/:email',

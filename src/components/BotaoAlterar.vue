@@ -1,15 +1,15 @@
 <template>
-    <input class="btn btn-warning" type="button" v-bind:value="titulo" v-on:click="alterar()">
+    <input class="btn btn-warning" type="button" v-bind:value="valor" v-on:click="alterarEntidade()">
 </template>
 
 <script>
 export default {
     name: 'BotaoAlterar',
-    props: ['titulo', 'entidade'],
+    props: ['valor', 'alterar', 'id'],
     methods: {
-        alterar: function(){
-            if(this.$props.entidade){}
-            else {}
+        alterarEntidade: function(){
+            if(this.$props.alterar) this.$router.push({name: 'AlterarPaciente', params: {id: this.$props.id}});
+            else this.$router.push({name: 'AlterarUsuario', params: {id: this.$props.id}});
         }
     }
 }

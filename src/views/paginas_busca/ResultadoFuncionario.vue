@@ -1,5 +1,6 @@
 <template>
-    <Tabela v-bind:remover="false" v-bind:cadastrar="false" titulo="Dependente" v-bind:array="$route.params.array"/>
+    <Tabela v-bind:alterar="false" v-bind:remover="false" v-bind:cadastrar="false" titulo="Dependente"
+    v-bind:array="$route.params.array" valor="Funcionário"/>
 </template>
 
 <script>

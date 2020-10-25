@@ -66,11 +66,6 @@
                 class="link"
                 right
               >
-                <b-dropdown-item>
-                  <router-link to="/alterar/usuario" class="dropdown-item link">
-                    Alterar Usuário
-                  </router-link>
-                </b-dropdown-item>
               </b-nav-item-dropdown>
               <b-nav-item><router-link to="/" style="text-decoration:none;">Sair</router-link></b-nav-item>
             </b-nav>
