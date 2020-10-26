@@ -33,11 +33,11 @@ export default {
         },
         clique: function(){
             if(this.$props.tipoUrl){
-                this.$http.get("http://localhost:8090/quatum/api/pacientes/?email="+this.email+'&nome='+this.nome).
+                this.$http.get("http://localhost:8095/quatum/api/pacientes/?email="+this.email+'&nome='+this.nome).
                 then((res) => this.enviar(res.data));
             }
             else{
-                this.$http.get("http://localhost:8090/quatum/api/funcionarios/?email="+this.email+'&nome='+this.nome).
+                this.$http.get("http://localhost:8095/quatum/api/funcionarios/?email="+this.email+'&nome='+this.nome).
                 then((res) => this.enviar(res.data));
             }
             //alert(JSON.stringify(this.array));

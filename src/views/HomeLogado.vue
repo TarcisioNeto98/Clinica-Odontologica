@@ -79,11 +79,11 @@ export default {
         }
     },
     mounted(){
-        this.$http.get('http://localhost:8090/quatum/api/consultas/quantidade')
+        this.$http.get('http://localhost:8095/quatum/api/consultas/quantidade')
         .then((res) => {this.mostrar(res.data)});
-        this.$http.get('http://localhost:8090/quatum/api/funcionarios/quantidade')
+        this.$http.get('http://localhost:8095/quatum/api/funcionarios/quantidade')
         .then((res) => {this.mostrarFun(res.data)});
-        this.$http.get('http://localhost:8090/quatum/api/pacientes/quantidade')
+        this.$http.get('http://localhost:8095/quatum/api/pacientes/quantidade')
         .then((res) => {this.mostrarPac(res.data)});
     }
 }

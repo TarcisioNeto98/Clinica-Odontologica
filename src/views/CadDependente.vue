@@ -32,7 +32,7 @@ export default {
             alert(JSON.stringify(data));
         },
         cadastrarDependente(){
-            this.$http.post("http://localhost:8090/quatum/api/dependentes/",
+            this.$http.post("http://localhost:8095/quatum/api/dependentes/",
             {nome: this.nome, cpf: this.cpf, idFuncionario: this.$route.params.id}).
             then(res => {this.mostrar(res.data)}).catch(e => console.error(e));
         }

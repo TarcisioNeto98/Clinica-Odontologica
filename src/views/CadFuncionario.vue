@@ -57,7 +57,7 @@ export default {
         alert(JSON.stringify(data));
       },
       clique: function(){
-        this.$http.post('http://localhost:8090/quatum/api/funcionarios/',
+        this.$http.post('http://localhost:8095/quatum/api/funcionarios/',
           {nome: this.nome, email: this.email, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
         ).then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));

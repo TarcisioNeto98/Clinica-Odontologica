@@ -80,7 +80,7 @@ export default {
       },
       clique: function(){
         if(this.validarCadastro()){
-          this.$http.post('http://localhost:8090/quatum/api/users/',
+          this.$http.post('http://localhost:8095/quatum/api/users/',
             {email: this.email,nome: this.nome, password: this.senha, endereco: this.endereco, cep: this.cep, cidade: this.cidade, estado: 'ce'}
           ).then((res) => {this.mostrar(res.data)}).
           catch(e => console.error(e));

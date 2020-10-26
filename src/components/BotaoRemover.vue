@@ -9,11 +9,11 @@ export default {
     methods: {
         removerItem: function(){
             if(this.$props.remover){
-                this.$http.delete("http://localhost:8090/quatum/api/pacientes/?id="+this.$props.id)
+                this.$http.delete("http://localhost:8095/quatum/api/pacientes/?id="+this.$props.id)
                 .catch(e => console.error(e));
             }
             else{
-                this.$http.delete("http://localhost:8090/quatum/api/funcionarios/?id="+this.$props.id)
+                this.$http.delete("http://localhost:8095/quatum/api/funcionarios/?id="+this.$props.id)
                 .catch(e => console.error(e));
             }
         }

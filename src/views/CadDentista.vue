@@ -36,7 +36,7 @@ export default {
         alert(JSON.stringify(data));
       },
       clique: function(){
-        this.$http.post('http://localhost:8090/quatum/api/dentistas/',
+        this.$http.post('http://localhost:8095/quatum/api/dentistas/',
           {nome: this.nome, especialidade: this.especialidade}
         ).then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));

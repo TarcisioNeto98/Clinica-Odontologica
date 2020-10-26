@@ -36,7 +36,7 @@
 export default {
     name: 'AlterarPaciente',
     mounted: function(){
-      this.$http.get("http://localhost:8090/quatum/api/pacientes/id/"+this.$route.params.id).then(res => res.data).
+      this.$http.get("http://localhost:8095/quatum/api/pacientes/id/"+this.$route.params.id).then(res => res.data).
       then(data => this.mostrar(data));
     },
     data: function(){
@@ -60,7 +60,7 @@ export default {
         this.cidade = data.cidade;
       },
       atualizar(){
-        this.$http.put('http://localhost:8090/quatum/api/pacientes/', 
+        this.$http.put('http://localhost:8095/quatum/api/pacientes/', 
         {id: this.id, email: this.email, nome: this.nome, cep: this.cep,
         estado: this.estado, cidade: this.cidade}).then(res => alert(JSON.stringify(res.data)));
       }

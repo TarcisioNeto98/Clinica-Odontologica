@@ -44,7 +44,7 @@
 export default {
   name: 'AlterarUsuario',
   mounted: function(){
-    this.$http.get("http://localhost:8090/quatum/api/funcionarios/id/"+this.$route.params.id).then(res => res.data).
+    this.$http.get("http://localhost:8095/quatum/api/funcionarios/id/"+this.$route.params.id).then(res => res.data).
     then(data => this.mostrar(data));
   },
   data: function(){
@@ -71,7 +71,7 @@ export default {
       this.email= data.email;
     },
     alterarFuncionario: function(){
-      this.$http.put("http://localhost:8090/quatum/api/funcionarios/", 
+      this.$http.put("http://localhost:8095/quatum/api/funcionarios/", 
       {id: this.id, nome: this.nome, cidade: this.cidade, salario: this.salario, cep: this.cep,
       estado: this.estado, endereco: this.endereco, email: this.email}).
       then(res => res.data).then(data => alert(JSON.stringify(data)));

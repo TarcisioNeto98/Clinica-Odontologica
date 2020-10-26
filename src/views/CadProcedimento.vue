@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <input type="reset" value="Limpar" id="resetar" class="btn btn-secondary mr-2">
-                <input type="submit" value="Cadastrar" id="submeter" class="btn btn-success" v-on:click="clique()">
+                <input type="button" value="Cadastrar" id="submeter" class="btn btn-success" v-on:click="clique()">
             </div>
         </form>
     </div>
@@ -42,7 +42,7 @@ export default {
         alert(JSON.stringify(data));
       },
       clique: function(){
-        this.$http.post('http://localhost:8090/quatum/api/procedimentos/',
+        this.$http.post('http://localhost:8095/quatum/api/procedimentos/',
           {nome: this.nome, valor: this.valor, descricao: this.descricao}
         ).then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));

@@ -61,7 +61,7 @@ export default{
     },
     login: function(){
       if(this.validarEmail() && this.validarSenha()){
-        this.$http.get("http://localhost:8090/quatum/api/users/?email="+this.email+'&password='+this.senha).
+        this.$http.get("http://localhost:8095/quatum/api/users/?email="+this.email+'&password='+this.senha).
         then((res) => {this.mostrar(res.data)}).
         catch(e => console.error(e));
       }
