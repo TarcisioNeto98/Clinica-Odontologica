@@ -48,7 +48,8 @@ export default {
         alert(JSON.stringify(data));
       },
       clique: function(){
-        this.selecionado = this.selecionado.replace(/\D/gim, '');
+        alert(this.data.length);
+        /*this.selecionado = this.selecionado.replace(/\D/gim, '');
         this.$http.post('http://localhost:8095/quatum/api/consultas/', 
         {valor: this.valor, data: this.data, idPaciente: this.$route.params.id, idDentista: this.selecionado})
         .then((res) => {
@@ -57,7 +58,7 @@ export default {
         catch((e) => {
           if(e.response.status === 401) alert("Dados preenchidos inadequadamente!");
           else alert("Não foi possivel cadastrar consulta!");
-        });
+        });*/
       }
     }
 }
