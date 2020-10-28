@@ -1,6 +1,7 @@
 <template>
 <form class="container">
   <h3 style="text-align: center;" class="mb-3 mt-3">Alterar Paciente {{this.id}}</h3>
+  <Alerta v-bind:expor="expor" v-bind:conteudo="alerta"/>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
@@ -33,6 +34,9 @@
 </template>
 
 <script>
+var validar = require('../../util/validacao');
+import Alerta from '../../components/Alerta.vue';
+
 export default {
     name: 'AlterarPaciente',
     mounted: function(){
@@ -50,6 +54,9 @@ export default {
           cidade: ''
         }
     },
+    components:{
+      Alerta
+    },
     methods: {
       mostrar(data){
         this.id = data.id;
@@ -59,16 +66,37 @@ export default {
         this.estado = data.estado;
         this.cidade = data.cidade;
       },
+      validarCampos: function(funcao, mensagem, campo){
+        //Nome de Procedimento Invalido <hr>
+        if(!funcao(campo)){
+            if(!this.expor) this.expor = true;
+            if(this.alerta.includes(mensagem))
+              return false;
+            this.alerta += mensagem;
+            return false;
+        }
+        if(this.alerta.includes(mensagem))
+          this.alerta = this.alerta.replace(mensagem, "");
+        if(this.alerta === '') this.expor = false;
+        return true;
+      },
       atualizar(){
-        this.$http.put('http://localhost:8095/quatum/api/pacientes/', 
-        {id: this.id, email: this.email, nome: this.nome, cep: this.cep,
-        estado: this.estado, cidade: this.cidade}).
-        then((res) => {
-          if(res.status === 201) alert(JSON.stringify(res.data));
-        }).catch((error) => {
-          if(error.response.status === 401) alert("Preencha os dados corretamente!");
-          else alert("Erro ao atualizar!");
-        });
+        if(this.validarCampos(validar.validarNome, "Nome Invalido <hr>", this.nome) 
+        && this.validarCampos(validar.validarEmail, "Email Invalido <hr>", this.email) && 
+        this.validarCampos(validar.validarProcedimento, "Nome de cidade Invalido <hr>", this.cidade)&&
+        this.validarCampos(validar.validarCep, "CEP Invalido <hr>", this.cep) &&
+        this.validarCampos(validar.validarEstado, "Nome de Estado Invalido <hr>", this.estado)){
+          
+          this.$http.put('http://localhost:8095/quatum/api/pacientes/', 
+          {id: this.id, email: this.email, nome: this.nome, cep: this.cep,
+          estado: this.estado, cidade: this.cidade}).
+          then((res) => {
+            if(res.status === 201) alert(JSON.stringify(res.data));
+          }).catch((error) => {
+            if(error.response.status === 401) alert("Preencha os dados corretamente!");
+            else alert("Erro ao atualizar!");
+          });
+        }
       }
     }
 }
