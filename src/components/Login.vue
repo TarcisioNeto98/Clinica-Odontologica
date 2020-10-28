@@ -129,8 +129,8 @@ export default{
     }
   },
   mounted: function(){
-    var nome = "TarcisioNeto3535Arajo";
-    if(validar.validarProcedimento(nome))alert("É certo");
+    var nome = "1111111s";
+    if(validar.validarCep(nome))alert("É certo");
     else alert("não é");
     this.$emit('desaparecer');
   }

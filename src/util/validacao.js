@@ -24,3 +24,16 @@ exports.validarSalario = (salario) => {
     }
     return false;
 }
+
+exports.validarCep = (cep) => {
+    if(cep.length === 8){
+        if(/^\d(\d){6}\d$/.test(cep)) return true;
+        return false;
+    }
+    return false;
+}
+
+exports.validarCpf = (cpf) => {
+    if(/^\\d{3}\\d{3}\\d{3}\\d{2}$/.test(cpf)) return true;
+    return false;
+}
