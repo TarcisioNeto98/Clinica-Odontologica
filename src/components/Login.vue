@@ -32,8 +32,6 @@
 </template>
 
 <script>
-var validar = require('../util/validacao');
-
 var cont = 0;
 export default{
   name: 'Login',
@@ -129,9 +127,6 @@ export default{
     }
   },
   mounted: function(){
-    var nome = "1111111s";
-    if(validar.validarCep(nome))alert("É certo");
-    else alert("não é");
     this.$emit('desaparecer');
   }
 }

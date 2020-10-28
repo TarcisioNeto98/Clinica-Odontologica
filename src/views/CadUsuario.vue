@@ -53,6 +53,7 @@
 
 <script>
 var cont = 0, contCep = 0;
+var validar = require('../util/validacao');
 export default {
     name: 'CadUsuario',
     data: function(){
@@ -106,6 +107,10 @@ export default {
         return false
       },
       validarCadastro: function(){
+        if(!validar.validarNome(this.nome)){
+          this.alertaConteudo += 'Nome Invalido<br><hr>';
+          return false;
+        }
         if(this.validarEmail() && this.validarSenha() && this.validarCep()) return true;
         return false;
       },
