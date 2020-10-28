@@ -38,8 +38,13 @@ export default {
       clique: function(){
         this.$http.post('http://localhost:8095/quatum/api/dentistas/',
           {nome: this.nome, especialidade: this.especialidade}
-        ).then((res) => {this.mostrar(res.data)}).
-        catch(e => console.error(e));
+        ).then((res) => {
+            if(res.status === 201) this.mostrar(res.data)
+        }).
+        catch((e) => {
+            if(e.response.status === 401) alert("Campos invalidos");
+            else alert("Erro ao cadastrar dentista!");
+        });
       }
     }
 }

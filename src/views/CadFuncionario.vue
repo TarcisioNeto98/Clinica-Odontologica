@@ -59,8 +59,12 @@ export default {
       clique: function(){
         this.$http.post('http://localhost:8095/quatum/api/funcionarios/',
           {nome: this.nome, email: this.email, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
-        ).then((res) => {this.mostrar(res.data)}).
-        catch(e => console.error(e));
+        ).then((res) => {
+            if(res.status === 201) this.mostrar(res.data);
+        }).catch(e => {
+            if(e.response.status === 401) alert("Campos preenchidos inadequadamente!");
+            else alert("Erro ao cadastrar funcionário!");
+        });
       }
     }
 }

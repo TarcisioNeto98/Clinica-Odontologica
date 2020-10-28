@@ -34,7 +34,12 @@ export default {
         cadastrarDependente(){
             this.$http.post("http://localhost:8095/quatum/api/dependentes/",
             {nome: this.nome, cpf: this.cpf, idFuncionario: this.$route.params.id}).
-            then(res => {this.mostrar(res.data)}).catch(e => console.error(e));
+            then((res) => {
+                if(res.status === 201) this.mostrar(res.data);
+            }).catch(e => {
+                if(e.response.status === 401) alert("Campos invalidos!");
+                else alert("Erro ao cadastrar dependente!");
+            });
         }
     }
 }

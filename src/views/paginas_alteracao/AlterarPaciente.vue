@@ -62,7 +62,13 @@ export default {
       atualizar(){
         this.$http.put('http://localhost:8095/quatum/api/pacientes/', 
         {id: this.id, email: this.email, nome: this.nome, cep: this.cep,
-        estado: this.estado, cidade: this.cidade}).then(res => alert(JSON.stringify(res.data)));
+        estado: this.estado, cidade: this.cidade}).
+        then((res) => {
+          if(res.status === 201) alert(JSON.stringify(res.data));
+        }).catch((error) => {
+          if(error.response.status === 401) alert("Preencha os dados corretamente!");
+          else alert("Erro ao atualizar!");
+        });
       }
     }
 }

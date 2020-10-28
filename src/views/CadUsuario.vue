@@ -82,8 +82,13 @@ export default {
         if(this.validarCadastro()){
           this.$http.post('http://localhost:8095/quatum/api/users/',
             {email: this.email,nome: this.nome, password: this.senha, endereco: this.endereco, cep: this.cep, cidade: this.cidade, estado: 'ce'}
-          ).then((res) => {this.mostrar(res.data)}).
-          catch(e => console.error(e));
+          ).then((res) => {
+            if(res.status === 201) this.mostrar(res.data);
+          }).
+          catch((e) => {
+            if(e.response.status === 403) alert("Dados preenchidos inadequadamente!");
+            else alert("Erro no servidor, não é possivel cadastrar!");
+          });
         }
         else{
           this.alerta = this.alerta.replace('ocultar', '');
@@ -162,7 +167,7 @@ export default {
     },
     mounted: function(){
       this.$emit('desaparecer');
-    },
+    }
 }
 </script>
 
