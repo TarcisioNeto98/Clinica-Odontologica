@@ -32,6 +32,8 @@
 </template>
 
 <script>
+var validar = require('../util/validacao');
+
 var cont = 0;
 export default{
   name: 'Login',
@@ -127,6 +129,9 @@ export default{
     }
   },
   mounted: function(){
+    var nome = "Tarcisio Neto3535@ Araújo";
+    if(validar.validarNome(nome))alert("É certo")
+    else alert("não é");
     this.$emit('desaparecer');
   }
 }
