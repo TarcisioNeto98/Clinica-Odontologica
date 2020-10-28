@@ -65,7 +65,7 @@ export default{
       if(this.validarEmail() && this.validarSenha()){
         this.$http.get("http://localhost:8095/quatum/api/users/?email="+this.email+'&password='+this.senha).
         then((res) => {this.mostrar(res.data)}).
-        catch(e => console.error(e));
+        catch(e => alert("Não foi possivel contactar o servidor " + e.response.status));
       }
       else{
         this.alerta = this.alerta.replace('ocultar', '');
@@ -129,8 +129,8 @@ export default{
     }
   },
   mounted: function(){
-    var nome = "Tarcisio Neto3535@ Araújo";
-    if(validar.validarNome(nome))alert("É certo")
+    var nome = "TarcisioNeto3535Arajo";
+    if(validar.validarProcedimento(nome))alert("É certo");
     else alert("não é");
     this.$emit('desaparecer');
   }
