@@ -49,9 +49,11 @@ export default {
           email: '',
           nome: '',
           cep: '',
-          estado: 'ce',
+          estado: 'CE',
           endereco: '',
-          cidade: ''
+          cidade: '',
+          expor: false,
+          alerta: ''
         }
     },
     components:{
@@ -86,8 +88,8 @@ export default {
         this.validarCampos(validar.validarProcedimento, "Nome de cidade Invalido <hr>", this.cidade)&&
         this.validarCampos(validar.validarCep, "CEP Invalido <hr>", this.cep) &&
         this.validarCampos(validar.validarEstado, "Nome de Estado Invalido <hr>", this.estado)){
-          
-          this.$http.put('http://localhost:8095/quatum/api/pacientes/', 
+          alert("valido");
+          /*this.$http.put('http://localhost:8095/quatum/api/pacientes/', 
           {id: this.id, email: this.email, nome: this.nome, cep: this.cep,
           estado: this.estado, cidade: this.cidade}).
           then((res) => {
@@ -95,7 +97,7 @@ export default {
           }).catch((error) => {
             if(error.response.status === 401) alert("Preencha os dados corretamente!");
             else alert("Erro ao atualizar!");
-          });
+          });*/
         }
       }
     }

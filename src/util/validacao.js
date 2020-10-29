@@ -34,10 +34,15 @@ exports.validarCep = (cep) => {
 }
 
 exports.validarCpf = (cpf) => {
-    if(/^\\d{3}\\d{3}\\d{3}\\d{2}$/.test(cpf)) return true;
+    if(/^\d{3}\d{3}\d{3}\d{2}$/.test(cpf)) return true;
     return false;
 }
 
 exports.validarEstado = (estado) => {
     return /^([A-Z])([A-Z])$/.test(estado);
+}
+
+exports.validarData = (data) => {
+    var regex = /^\d{4}[-]\d{2}[-]\d{2}/;
+    return regex.test(data);
 }
