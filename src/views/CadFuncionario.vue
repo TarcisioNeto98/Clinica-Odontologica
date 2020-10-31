@@ -86,16 +86,15 @@ export default {
         this.validarCampos(validar.validarCep, "CEP Invalido <hr>", this.cep) &&
         this.validarCampos(validar.validarEstado, "Nome de Estado Invalido <hr>", this.estado) &&
         this.validarCampos(validar.validarSalario, "Salario Invalido <hr>", this.salario)){
-            alert("Campos validos");
-        }
-        /*this.$http.post('http://localhost:8095/quatum/api/funcionarios/',
-          {nome: this.nome, email: this.email, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
+        this.$http.post('http://localhost:8095/quatum/api/funcionarios/',
+        {nome: this.nome, email: this.email, endereco: this.endereco, cidade: this.cidade, cep: this.cep, estado: 'CE', salario: this.salario}
         ).then((res) => {
             if(res.status === 201) this.mostrar(res.data);
         }).catch(e => {
             if(e.response.status === 401) alert("Campos preenchidos inadequadamente!");
             else alert("Erro ao cadastrar funcionário!");
-        });*/
+        });
+        }
       }
     }
 }

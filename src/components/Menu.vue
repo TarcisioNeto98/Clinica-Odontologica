@@ -54,6 +54,11 @@
                   </router-link>
                 </b-dropdown-item>
                 <b-dropdown-item>
+                  <router-link to="/buscar/consulta" class="dropdown-item">
+                    Buscar Consulta
+                  </router-link>
+                </b-dropdown-item>
+                <b-dropdown-item>
                   <router-link to="/buscar/paciente" class="dropdown-item">
                     Buscar Paciente
                   </router-link>

@@ -5,10 +5,11 @@
 <script>
 export default {
     name: 'BotaoAlterar',
-    props: ['valor', 'alterar', 'id'],
+    props: ['valor', 'alterar', 'id', 'consulta'],
     methods: {
         alterarEntidade: function(){
-            if(this.$props.alterar) this.$router.push({name: 'AlterarPaciente', params: {id: this.$props.id}});
+            if(this.$props.consulta === "consulta") this.$router.push({name: 'AlterarConsulta', params: {id: this.$props.id}});
+            else if(this.$props.alterar) this.$router.push({name: 'AlterarPaciente', params: {id: this.$props.id}});
             else this.$router.push({name: 'AlterarUsuario', params: {id: this.$props.id}});
         }
     }

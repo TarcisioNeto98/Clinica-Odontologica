@@ -12,10 +12,13 @@ import BuscarUsuario from '../views/paginas_busca/BuscarUsuario.vue';
 import BuscarDependente from '../views/paginas_busca/BuscarDependente.vue';
 import BuscarPaciente from '../views/paginas_busca/BuscarPaciente.vue';
 import AlterarUsuario from '../views/paginas_alteracao/AlterarUsuario.vue';
+import AlterarConsulta from '../views/paginas_alteracao/AlterarConsulta.vue';
+import BuscarConsulta from '../views/paginas_busca/BuscarConsulta.vue';
 import AlterarPaciente from '../views/paginas_alteracao/AlterarPaciente.vue';
 import HomeLogado from '../views/HomeLogado.vue';
 import ResultadoPaciente from '../views/paginas_busca/ResultadoPaciente.vue';
 import ResultadoFuncionario from '../views/paginas_busca/ResultadoFuncionario.vue';
+import ResultadoConsulta from '../views/paginas_busca/ResultadoConsulta.vue';
 
 Vue.use(VueRouter)
 
@@ -84,9 +87,19 @@ const routes = [
     component: ResultadoFuncionario
   },
   {
+    path: '/resultado/consulta:array',
+    name: 'ResultadoConsulta',
+    component: ResultadoConsulta
+  },
+  {
     path: '/buscar/paciente',
     name: 'BuscarPaciente',
     component: BuscarPaciente
+  },
+  {
+    path: '/buscar/consulta',
+    name: 'BuscarConsulta',
+    component: BuscarConsulta
   },
   {
     path: '/alterar/usuario:id',
@@ -97,6 +110,11 @@ const routes = [
     path: '/alterar/paciente:id',
     name: 'AlterarPaciente',
     component: AlterarPaciente
+  },
+  {
+    path: '/alterar/consulta:id',
+    name: 'AlterarConsulta',
+    component: AlterarConsulta
   },
   {
     path: '/home:id/:email',
