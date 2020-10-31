@@ -13,7 +13,7 @@
     <tr v-for="obj in array" v-bind:key="obj.id">
       <th scope="row">{{obj.id}}</th>
       <td>{{obj.nome}}</td>
-      <td><BotaoRemover v-bind:remover="remover" v-bind:id="obj.id"/></td>
+      <td><BotaoRemover v-on:recarregar="repassarEvento()" v-bind:remover="remover" v-bind:id="obj.id"/></td>
       <td><BotaoCadastrar v-bind:cadastrarItem="cadastrar" v-bind:id="obj.id" v-bind:cadastrar="titulo"/></td>
       <td><BotaoAlterar v-bind:alterar="alterar" v-bind:valor="valor" v-bind:id="obj.id"/></td>
     </tr>
@@ -38,6 +38,11 @@ export default{
         return {
             id: '2'
         }
+    },
+    methods:{
+      repassarEvento: function(){
+        this.$emit("carregarTabela");
+      }
     }
 }
 </script>

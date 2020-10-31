@@ -25,7 +25,7 @@ export default {
         atribuir: function(data){
             this.consultas = data;
             alert(JSON.stringify(this.consultas));
-            this.$router.push({name: 'ResultadoConsulta', params: {array: data}});
+            this.$router.push({name: 'ResultadoConsulta', params: {array: data, data: this.data}});
         },
         clique: function(){
             this.$http.get("http://localhost:8095/quatum/api/consultas/data/"+this.data).

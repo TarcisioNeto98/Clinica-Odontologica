@@ -12,7 +12,7 @@ exports.validarEmail = (email) => {
 }
 
 exports.validarProcedimento = (procedimento) => {
-    if(procedimento.length >= 10)
+    if(procedimento.length >= 5)
         return true;
     return false;
 }

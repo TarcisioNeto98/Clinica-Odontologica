@@ -28,8 +28,8 @@ export default {
     methods: {
         enviar(data){
             this.array = data;
-            if(this.tipoUrl) this.$router.push({name: 'ResultadoPaciente', params: {array: this.array}});
-            else this.$router.push({name: 'ResultadoFuncionario', params: {array: this.array}});
+            if(this.tipoUrl) this.$router.push({name: 'ResultadoPaciente', params: {array: this.array, nome: this.nome, email: this.email}});
+            else this.$router.push({name: 'ResultadoFuncionario', params: {array: this.array, nome: this.nome, email: this.email}});
         },
         clique: function(){
             if(this.$props.tipoUrl){

@@ -77,17 +77,17 @@ const routes = [
     component: BuscarUsuario
   },
   {
-    path: '/resultado/paciente:array',
+    path: '/resultado/paciente:array/nomePaciente:nome/emailPaciente:email',
     name: 'ResultadoPaciente',
     component: ResultadoPaciente
   },
   {
-    path: '/resultado/funcionario:array',
+    path: '/resultado/funcionario:array/nomeFuncionario:nome/emailFuncionario:email',
     name: 'ResultadoFuncionario',
     component: ResultadoFuncionario
   },
   {
-    path: '/resultado/consulta:array',
+    path: '/resultado/consulta:array/datas:data',
     name: 'ResultadoConsulta',
     component: ResultadoConsulta
   },

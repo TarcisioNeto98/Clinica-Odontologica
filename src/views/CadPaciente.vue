@@ -12,10 +12,6 @@
         <input type="text" v-model="nome" name="nomePaciente" id="idNome" class="form-control" placeholder="Informe o nome do paciente">
     </div>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Endereço</label>
-    <input type="text" v-model="endereco" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-  </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Cidade</label>
@@ -30,7 +26,7 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputCEP">CEP</label>
-      <input type="text" v-model="cep" v-on:click="clique()" class="form-control" id="inputCEP">
+      <input type="text" v-model="cep" class="form-control" id="inputCEP">
     </div>
   </div>
   <button type="button" v-on:click="clique()" class="btn btn-primary btn-lg">Cadastrar</button>
